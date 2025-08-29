@@ -1,0 +1,25 @@
+@model NewMVC.Models.BMI
+
+@{
+    ViewData["Title"] = "Tính chỉ số BMI";
+}
+
+<h2>Tính chỉ số BMI</h2>
+
+<form asp-action="Index" method="post">
+    <div>
+        <label asp-for="CanNang"></label>
+        <input asp-for="CanNang" class="form-control" />
+    </div>
+    <div>
+        <label asp-for="ChieuCao"></label>
+        <input asp-for="ChieuCao" class="form-control" />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Tính BMI</button>
+</form>
+
+@if (Model.GiaTriBMI > 0)
+{
+    <p>BMI = @Model.GiaTriBMI.ToString("0.00") → @Model.DanhGia</p>
+}

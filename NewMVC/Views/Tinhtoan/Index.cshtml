@@ -1,0 +1,38 @@
+@model NewMVC.Models.TinhToan
+
+@{
+    ViewData["Title"] = "Máy tính đơn giản";
+}
+
+<h2>Máy tính đơn giản</h2>
+
+<form asp-action="Index" method="post">
+    <div>
+        <label>Số 1:</label>
+        <input asp-for="So1" class="form-control" />
+    </div>
+    <div>
+        <label>Số 2:</label>
+        <input asp-for="So2" class="form-control" />
+    </div>
+    <div>
+        <label>Phép tính:</label>
+        <select asp-for="PhepTinh" class="form-control">
+            <option value="cong">Cộng</option>
+            <option value="tru">Trừ</option>
+            <option value="nhan">Nhân</option>
+            <option value="chia">Chia</option>
+        </select>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Tính</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.ThongBao))
+{
+    <p>@Model.ThongBao</p>
+}
+else if (Model.PhepTinh != null)
+{
+    <p>Kết quả: @Model.KetQua</p>
+}
