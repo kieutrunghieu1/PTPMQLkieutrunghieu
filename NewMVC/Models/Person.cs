@@ -1,16 +1,16 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace NewMVC.Models;
-
+namespace NewMVC.Models
+{
+    [Table("Persons")]
 public class Person
 {
     [Key]
-    public string PersonId { get; set; } = string.Empty;
+    public string? PersonId { get; set; }
 
-    [Required]
-    [StringLength(100)]
-    public string FullName { get; set; } = string.Empty;
-
-    [StringLength(200)]
+    public string? FullName { get; set; }
     public string? Address { get; set; }
+}
+
 }

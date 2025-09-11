@@ -4,7 +4,6 @@ namespace NewMVC.Controllers
 {
     public class EmployeeController : Controller
     {
-
         public IActionResult Index()
         {
             return View();
