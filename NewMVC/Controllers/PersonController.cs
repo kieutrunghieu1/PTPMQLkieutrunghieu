@@ -52,6 +52,8 @@ namespace NewMVC.Controllers
         {
             if (ModelState.IsValid)
             {
+                person.PersonId = Guid.NewGuid().ToString();
+
                 _context.Add(person);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

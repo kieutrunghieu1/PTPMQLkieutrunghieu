@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic; 
 
 namespace NewMVC.Models;
 
@@ -10,4 +11,6 @@ public class HeThongPhanPhoi
     [Required]
     [StringLength(100)]
     public string TenHTPP { get; set; } = string.Empty;
+    public ICollection<DaiLy>? DaiLys { get; set; }
+
 }
